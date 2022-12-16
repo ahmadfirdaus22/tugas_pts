@@ -24,14 +24,14 @@ class Products extends Database
 
     public function insert($data)
     {
-        $statement = self::$conn->prepare("INSERT INTO product(name, hs_code, value) values(:name, :hs_code, :value ) ");
+        $statement = self::$conn->prepare("INSERT INTO product(name, hs_code) values(:name, :hs_code) ");
 
         return $statement->execute($data);
     }
 
     public function update($data, $id)
     {
-        $statement = self::$conn->prepare("UPDATE product SET name=:name, hs_code=:hs_code, value=:value ,  updated_at = :updated_at where id = $id");
+        $statement = self::$conn->prepare("UPDATE product SET name=:name, hs_code=:hs_code,  updated_at = :updated_at where id = $id");
 
         return $statement->execute($data);
     }

@@ -8,7 +8,7 @@ class Trx_Buys extends Database
 {
     public function show()
     {
-        $statement = self::$conn->prepare("SELECT trx_buy.*, supplier.*, buyer.*, exporter.* FROM trx_buy JOIN supplier ON supplier.id = trx_buy.supplier_id JOIN buyer ON buyer.id = trx_buy.buyer_id JOIN exporter ON exporter.id = trx_buy.exporter_id");
+        $statement = self::$conn->prepare("SELECT trx_buy.*, buyer.company_name as buyer_name, supplier.company_name as supplier_name, supplier.*,buyer.*, exporter.*, trx_buy.id as id FROM trx_buy JOIN supplier ON supplier.id = trx_buy.supplier_id JOIN buyer ON buyer.id = trx_buy.buyer_id JOIN exporter ON exporter.id = trx_buy.exporter_id");
         $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_OBJ);
@@ -16,7 +16,7 @@ class Trx_Buys extends Database
 
     public function showone($id)//for update view
     {
-        $statement = self::$conn->prepare("SELECT * FROM trx_buy where id = $id");
+        $statement = self::$conn->prepare("SELECT supplier.product_id as product_id , trx_buy.* FROM trx_buy join supplier on supplier.id = trx_buy.supplier_id where trx_buy.id = $id");
         $statement->execute();
 
         return $statement->fetch(\PDO::FETCH_OBJ);
@@ -40,5 +40,13 @@ class Trx_Buys extends Database
         $statement = self::$conn->prepare("DELETE from trx_buy where id = $id");
 
         return $statement->execute();
+    }
+
+    public function idmax()
+    {
+        $statement = self::$conn->prepare("SELECT MAX(id) from trx_buy");
+        $statement ->execute();
+
+        return $statement->fetchColumn();
     }
 }

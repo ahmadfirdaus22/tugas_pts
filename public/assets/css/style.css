@@ -1,0 +1,392 @@
+body{
+    margin: 0;
+    padding: 0px;
+    background-color: #6F9CEB;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home{
+    display: flex;
+    height: 80vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f5f5;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav li{
+    font-size: 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    background-color: #f5f5f5;
+    width: 92.5%;
+    height: 10vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+}
+
+.nothing{
+    padding-bottom: 10vh;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #97DECE;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.item{
+    display: block;
+    padding: 10px;
+}
+
+.item:hover{
+    background-color: #f5f5f5;
+}
+
+.wrap{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.card{
+    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #CBEDD5;
+    border-radius: 10px;
+    display: block;
+    padding: 15px;
+}
+
+.log{
+    width: 15vw;
+    height: 4vh;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label{
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submit{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 5vh;
+    border: 0;
+    margin-top: 20px;
+    background-color: #009EFF;
+}
+
+.submit:hover{
+    background-color: #009dffa6;
+}
+
+
+.container{
+    padding-top: 5vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.main{
+    background-color: #d5d1f7;
+    border-radius: 5px;
+    border: 1px solid;
+    font-family: 'ubuntu';
+}
+
+.main td{
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.head{
+    background-color: #97DECE;
+}
+
+.title{
+    background-color: #d5d1f7;
+    width: 100%;
+    font-weight: bold;
+    font-size: 30px;
+    height: 10vh;
+    border-radius: 5px;
+    border: 1px solid #3e7297;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px ;
+}
+
+.update{
+    background-color: #009EFF;
+    border: 1px solid #3e7297;
+    border-radius: 5px;
+    color: #d5d1f7;
+    font-size: 17px;
+    padding: 5px;
+    font-family: 'ubuntu';
+}
+
+.update:hover{
+    background-color: #d5d1f7;
+    color: #009EFF ;
+    
+}
+
+.delete{
+    background-color: #D72638;
+    border: 1px solid #3e7297;
+    color: #d5d1f7;
+    border-radius: 5px;
+    font-family: 'ubuntu';
+    font-size: 17px;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 10px;
+}
+
+.delete:hover{
+    background-color: #d5d1f7;
+    color: #D72638;
+}
+
+.add{
+    background-color: #2FDD92;
+    border:  1px solid #3e7297;
+    font-size: 20px;
+    padding: 5px;
+    color: #050517;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.add:hover{
+    background-color: #d5d1f7;
+    color: #2FDD92;
+}
+
+.detail{
+    background-color: #62B6B7;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #3e7297;
+}
+
+.detail:hover{
+    background-color: #2dd2d4c5;
+}
+
+.ibutton{
+    text-decoration: none;
+    color: black;
+}
+
+.detailbuy{
+    background-color: #f5f5f5;
+    display: block;
+    width: 70%;
+    border-radius: 10px;
+}
+
+
+.title2{
+    background-color: #5DA7DB;
+    width: 95%;
+    margin-left: 2.5%;
+    font-size: 30px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #3e7297;    
+    margin-bottom: 20px ;
+    margin-top: 20px;
+}
+
+.content{
+    display: block;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.tabledetail{
+    background-color: #97DECE;
+    font-size: 20px;    
+    margin-right: 5px;
+}
+
+.tabledetail td{
+    padding: 10px;
+    max-width: 15vw;
+    text-align: justify ;
+}
+
+.back{
+    float: right;
+    margin-right: 2.5%;
+    background-color: #3e7297;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #3e7297; ;
+    margin-bottom: 20px;
+}
+
+.aback{
+    text-decoration: none;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.card2{
+    background-color: #d5d1f7;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    color: #2F323A;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    box-shadow: 4px 5px 6px 0px rgba(249,246,238,0.74);
+    -webkit-box-shadow: 4px 5px 6px 0px rgba(249,246,238,0.74);
+    -moz-box-shadow: 4px 5px 6px 0px rgba(249,246,238,0.74);
+    min-width: 150px;
+    font-family: 'Ubuntu';
+    
+}
+
+.wrap2{
+    display: flex;
+    gap: 47px;
+    flex-wrap: wrap;
+}
+
+.container2{
+    width: 100%;
+}
+
+.ad{
+    text-decoration: none;
+    color: #050517;
+}
+
+.card3{
+    background-color: #d5d1f7;
+    padding: 20px;
+    display: block;
+    font-family: 'ubuntu';
+    border-radius: 10px;
+}
+
+.form_input{
+    width: 30vw;
+    height: 4vh;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.form_name{
+    margin-bottom: 8px;
+}
+
+.area_form{
+    resize: none;
+    width: 30vw;
+    font-size: 15px;
+    height: 8vh;
+    border-radius: 5px;
+}
+
+.submit_form{
+    width: 100%;
+    background-color: #1677ff;
+    color: #f5f5f5;
+    border: none;
+    height: 4vh;
+    font-size: medium;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.form_title{
+    text-align: center;
+    margin-top: 2px;
+}
+
+.form_select{
+    width: 30vw;
+    height: 5vh;
+    font-size: 15px;
+}
+
+.card4{
+    display: flex;
+    gap: 120px;
+    margin-left: 70px;
+}
+
+.form_input2{
+    height: 4vh;
+    text-align: center;
+    width: 14.5vw;
+    border-radius: 5px;
+}
+
+.card5{
+    display: flex;
+    gap: 100px;
+    margin-left: 60px;
+}

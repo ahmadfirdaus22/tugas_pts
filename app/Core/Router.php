@@ -5,7 +5,7 @@ namespace OOP\app\Core;
 class Router
 {
     private static $routes = [];
-    private static $baseurl ='http://localhost/php2/library2/public/';
+    private static $baseurl ='http://localhost/php2/final/public/';
 
     public static function addRoute($method, $path, $controller, $function, $middleware = [])
     {
@@ -17,7 +17,7 @@ class Router
             'middleware' => $middleware
         ];
     }
-    //https://pastebin.com/BUhAktyv
+  
     public static function url(string $path)
     {
         $baseurl = self::$baseurl ?? "http://localhost";

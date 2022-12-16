@@ -26,10 +26,21 @@ class ComposerStaticInit4c1e04985aa7f844dead5d3e034c2270
         'OOP\\app\\Controller\\Buyer' => __DIR__ . '/../..' . '/app/Controller/Buyer.php',
         'OOP\\app\\Controller\\Exporter' => __DIR__ . '/../..' . '/app/Controller/Exporter.php',
         'OOP\\app\\Controller\\Product' => __DIR__ . '/../..' . '/app/Controller/Product.php',
+        'OOP\\app\\Controller\\Saldo' => __DIR__ . '/../..' . '/app/Controller/Saldo.php',
+        'OOP\\app\\Controller\\Supplier' => __DIR__ . '/../..' . '/app/Controller/Supplier.php',
+        'OOP\\app\\Controller\\Trx_Buy' => __DIR__ . '/../..' . '/app/Controller/Trx_Buy.php',
+        'OOP\\app\\Controller\\Trx_Receive' => __DIR__ . '/../..' . '/app/Controller/Trx_Receive.php',
         'OOP\\app\\Core\\Router' => __DIR__ . '/../..' . '/app/Core/Router.php',
+        'OOP\\app\\Core\\View' => __DIR__ . '/../..' . '/app/Core/View.php',
+        'OOP\\app\\Middleware\\Auth' => __DIR__ . '/../..' . '/app/Middleware/Auth.php',
+        'OOP\\app\\Middleware\\Guest' => __DIR__ . '/../..' . '/app/Middleware/Guest.php',
         'OOP\\app\\Model\\Buyers' => __DIR__ . '/../..' . '/app/Model/Buyers.php',
         'OOP\\app\\Model\\Exporters' => __DIR__ . '/../..' . '/app/Model/Exporters.php',
         'OOP\\app\\Model\\Products' => __DIR__ . '/../..' . '/app/Model/Products.php',
+        'OOP\\app\\Model\\Saldos' => __DIR__ . '/../..' . '/app/Model/Saldos.php',
+        'OOP\\app\\Model\\Suppliers' => __DIR__ . '/../..' . '/app/Model/Suppliers.php',
+        'OOP\\app\\Model\\Trx_Buys' => __DIR__ . '/../..' . '/app/Model/Trx_Buys.php',
+        'OOP\\app\\Model\\Trx_Receives' => __DIR__ . '/../..' . '/app/Model/Trx_Receives.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

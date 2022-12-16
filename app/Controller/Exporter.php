@@ -3,6 +3,7 @@
 namespace OOP\app\Controller;
 use OOP\app\Model\Exporters;
 use OOP\app\Core\Router;
+use OOP\app\Core\View;
 
 // include '../View/header.php';
 
@@ -16,30 +17,61 @@ class Exporter
         $this->export = new Exporters();
     }
 
+    public function home()
+    {
+        View::render2("Home");
+    }
+
+    public function login()
+    {
+        View::render3("LoginPage");
+    }
+
+    public function signin()
+    {
+        $exporter = $this->export->findemail($_POST['email']);
+        if($exporter && password_verify($_POST['password'], $exporter['password'])){
+            $_SESSION['auth'] =$exporter;
+
+            Router::redirect('');
+            return;
+        }
+        Router::redirect('login');
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        Router::redirect('login');
+    }
+
+    public function signup()
+    {
+        View::render3("Sign-up");
+    }
+
     public function index()
     {
-        var_dump($this->export->show());     
+        $data = $this->export->show();
+        View::render2("Exporter");
     }
 
     public function input(){
         $data=[
-            'name' => 'daus',
-            'phone' => '123144',
-            'email' => 'adasd@gmail.com',
-            'address' => 'dimana saja',
-            'password' => password_hash('cek123',PASSWORD_DEFAULT),
+            'email' => $_POST['email'],
+            'password' => password_hash($_POST['password'],PASSWORD_DEFAULT),
         ];
-
         $this->export->insert($data);
+        Router::redirect("login");
     }
 
     public function update(){
-        $id = 2;
+        $id = $_POST['id'];
         $data=[
-            'name' => 'tes',
-            'phone' => 'tes',
-            'email' => 'tes',
-            'address' => 'tes',
+            'name' => $_POST['name'],
+            'phone' => $_POST['phone'],
+            'email' => $_POST['email'],
+            'address' => $_POST['address'],
             'updated_at' => date("Y-m-d H:i:s ")
         ];
 

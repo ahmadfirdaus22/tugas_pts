@@ -3,6 +3,7 @@
 namespace OOP\app\Controller;
 use OOP\app\Model\Buyers;
 use OOP\app\Core\Router;
+use OOP\app\Core\View;
 
 // include '../View/header.php';
 
@@ -18,37 +19,52 @@ class Buyer
 
     public function index()
     {
-        var_dump($this->buy->show());     
+        $data = $this->buy->show();
+        View::render("Buyer", $data);
+    }
+
+    public function add()
+    {
+        View::render6("Buyer");
     }
 
     public function input(){
         $data=[
-            'company_name' => 'JEONG EUN TRADING CO LTD',
-            'email' => 'jeong@gmail.com',
-            'address' => '301 Mopico Bld 693-3 Nambumin-dong Seo-gu
-            Busan - Korea, South - 602020',
-            'country' => 'South Korea'
+            'company_name' => $_POST['company_name'],
+            'email' => $_POST['email'],
+            'address' => $_POST['address'],
+            'country' => $_POST['country']
         ];
 
         $this->buy->insert($data);
+        Router::redirect('buyer');
+    }
+
+    public function new()
+    {
+        $id = $_POST['id'];
+        $data = $this->buy->showone($id);
+        View::render7("Buyer", $data);
     }
 
     public function update(){
-        $id = 5;
+        $id = $_POST['id'];
         $data=[
-            'company_name' => 'TES',
-            'email' => 'TES',
-            'address' => 'TES',
-            'country' => 'TES',
+            'company_name' => $_POST['company_name'],
+            'email' => $_POST['email'],
+            'address' => $_POST['address'],
+            'country' => $_POST['country'],
             'updated_at' => date("Y-m-d H:i:s ")
         ];
 
         $this->buy->update($data,$id);
+        Router::redirect('buyer');
     }
 
     public function delete(){
-        $id = 5;
+        $id = $_POST['id'];
         $this->buy->delete($id);
+        Router::redirect('buyer');
     }
 
 

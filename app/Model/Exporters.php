@@ -21,7 +21,7 @@ class Exporters extends Database
     }
 
     public function insert($data){
-        $statement = self::$conn->prepare("INSERT INTO exporter(name, phone, email, address, password) values(:name, :phone ,:email, :address, :password) ");
+        $statement = self::$conn->prepare("INSERT INTO exporter(email, password) values( :email, :password) ");
 
         return $statement->execute($data);
     }
@@ -38,4 +38,11 @@ class Exporters extends Database
         return $statement->execute();
     }
 
+    public function findemail($email)
+    {
+        $statement = self::$conn->prepare("SELECT * from exporter where email = '$email'");
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }
